@@ -1,5 +1,33 @@
 const functions = require('./functions');
+// RUNNING BEFORE AND AFTER TEST on EACH
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
 
+
+//  RUNNING BEFORE AND AFTER TEST on ALL
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log('Database Initialized...');
+// const closeDatabase = () => console.log('database closed..');
+
+
+// DESCRIBE TARGET TEST describe block ===============
+const nameCheck = () => console.log('Checking Name...');
+
+describe('Checking names', () => {
+    beforeEach(() => nameCheck());
+
+    test('User is Jeff', () => {
+        const user = 'Jeff';
+        expect(user).toBe('Jeff');
+    });
+
+    test('User is Karen', () => {
+        const user = 'Karen';
+        expect(user).toBe('Karen');
+    })
+});
 test('adds 2 + 2 to equal 4', () => {
     expect(functions.add(2, 2)).toBe(4);
 })
